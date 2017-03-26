@@ -29,7 +29,6 @@ fastclick
 raix:handlebar-helpers
 aldeed:collection2
 # aldeed:autoform
-useraccounts:bootstrap
 accounts-ui
 accounts-password
 matb33:bootstrap-glyphicons

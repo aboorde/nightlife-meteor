@@ -117,8 +117,7 @@ Template.SearchBars.events({
             }
 
         } else {
-            console.log(" Ya fucked up ")
-            $('#myModal').modal('toggle')
+            $('#login-sign-in-link').trigger('click')
         }
 
     }
