@@ -1,6 +1,7 @@
 <template name="SearchBars">
     <div class="container">
-        <div class="row">
+        <div class="row bar-search">
+            Search: {{searchTerm}}
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="input-group stylish-input-group">
                     <form class="search-bars-form">
@@ -14,5 +15,26 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+                {{#each searchResults}}
+                    <a href="{{url}}">
+                        <div class="col-sm-6 col-md-4 col-lg-3 bs-callout" data-bar="{{id}}">
+                            <div class="bar-container">
+                                <button class="btn btn-info btn-attend"><span class="going">{{attending}}</span> Going</button>
+                                <img src="{{image_url}}" class="img-rounded">
+                                <div class='content-container'>
+                                    <div class="bar-content"><strong>{{name}}</strong></div>
+                                    <div class="bar-content">Rating: {{rating}} Stars</div>
+                                    <div class="bar-content">Phone: {{display_phone}}</div>
+                                    
+                                </div>
+                                    
+                            </div>
+                        </div>
+                    </a>
+                {{/each}}
+        </div>
+
     </div>
 </template>

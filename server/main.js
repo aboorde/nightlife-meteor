@@ -7,11 +7,12 @@ Meteor.startup(() => {
 
 Meteor.methods({
 
-  callYelp: function() {
+  callYelp: function(searchLocation) {
     try {
-      var response = HTTP.call("GET", "https://api.yelp.com/v3/businesses/search", {
+      var url = 'https://api.yelp.com/v3/businesses/search?term=bar&location=' + searchLocation;
+      var response = HTTP.call("GET", url, {
           headers: {
-              "Authorization": "Bearer",
+              "Authorization": process.env.YELP_KEY,
           }
       });
       return response;
